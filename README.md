@@ -7,6 +7,26 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+## Api 
+
+api_password : the password to access the api, Don't forget to use it
+
+Admin Get All Payment ex : 
+{
+Month: ‘Jan’,
+Salaries_payment_day: 31,
+Bonus_payment_day: 15,
+Salaries_total: $15000,
+Bonus_total: $1000,
+Payments_total: $16000
+}
+
+## laravel send mail 
+
+I used MailTrap, don't forget to Enter your username and password To receive messages ..
+
+You can use Google instead of mailtrap
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
