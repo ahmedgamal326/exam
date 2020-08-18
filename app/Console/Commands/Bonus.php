@@ -51,27 +51,28 @@ class Bonus extends Command
             $bouns_total += $salary * $employee->bonus_salary / 100;
         }
 
-        /*
-            if(Carbon::endOfMonth()->format('d') == 31 ) {
-                $date = Carbon::endOfMonth()->modify('-16 day')->dayName;   
-                if($date == "Friday" || $date == "Saturday") {
-                $date =  Carbon::endOfMonth()->modify('-16 day')->modify("thursday")->format('d');
-                }
+          
+        if(Carbon::today()->endOfMonth()->format('d') == 31 ) {
+            $date = Carbon::today()->endOfMonth()->modify('-16 day')->dayName;   
 
-            } else if(Carbon::endOfMonth()->format('d') == 30) {
-                $date = Carbon::endOfMonth()->modify('-15 day')->dayName; 
-                if($date == "Friday" || $date == "Saturday") {
-                $date =  Carbon::today()->endOfMonth()->modify('-16 day')->modify("thursday")->format('d');
-                }
-            } else if(Carbon::endOfMonth()->format('d') == 28) {
-                $date = Carbon::endOfMonth()->modify('-13 day')->dayName; 
-                if($date == "Friday" || $date == "Saturday") {
-                $date =  Carbon::endOfMonth()->modify('-16 day')->modify("thursday")->format('d');
-                }
+            if($date == "Friday" || $date == "Saturday") {
+               $date =  Carbon::today()->endOfMonth()->modify('-16 day')->modify("thursday")->format('d');
             }
-*/
+
+       } else if(Carbon::today()->endOfMonth()->format('d') == 30) {
+            $date = Carbon::today()->endOfMonth()->modify('-15 day')->dayName; 
+            if($date == "Friday" || $date == "Saturday") {
+               $date =  Carbon::today()->endOfMonth()->modify('-16 day')->modify("thursday")->format('d');
+            }
+       } else if(Carbon::today()->endOfMonth()->format('d') == 28) {
+            $date = Carbon::today()->endOfMonth()->modify('-13 day')->dayName; 
+            if($date == "Friday" || $date == "Saturday") {
+               $date =  Carbon::today()->endOfMonth()->modify('-16 day')->modify("thursday")->format('d');
+            }
+       }
+
         $payment_month = Payment_Month::where('bonus_payment_day', 0)->update([
-            'bonus_payment_day' => 15,
+            'bonus_payment_day' => $date,
             'salaries_total' => $salary,
             'bonus_total' => $bouns_total,
             'payments_total' => $salary + $bouns_total,
