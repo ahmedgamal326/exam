@@ -16,9 +16,9 @@ Admin Get All Payment ex :
 Month: ‘Jan’,
 Salaries_payment_day: 31,
 Bonus_payment_day: 15,
-Salaries_total: $15000,
-Bonus_total: $1000,
-Payments_total: $16000
+Salaries_total: $20000,
+Bonus_total: $2000,
+Payments_total: $22000
 }
 
 ## laravel send mail 
@@ -26,6 +26,10 @@ Payments_total: $16000
 I used MailTrap, don't forget to Enter your username and password To receive messages ..
 
 You can use Google instead of mailtrap
+
+## database 
+
+exam.sql  .. 
 
 ## About Laravel
 
